@@ -20,4 +20,7 @@ public class Question {
     private Long questionId;
     private String question;
 
+    //foreign key
+    private Long quizId;
+
 }
