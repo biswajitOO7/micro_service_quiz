@@ -9,19 +9,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
-@Entity
+//@Entity   //  no need to save in database so removing database notations
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Quiz {
+public class Question {
+    // @Id  //  no need to save in database so removing database notations
+    //@GeneratedValue(strategy = GenerationType.IDENTITY) //  no need to save in database so removing database notations
+    private Long questionId;
+    private String question;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //private Long id;
+    //foreign key
     private Long quizId;
-    private String title;
-    transient private List<Question> questions;  // transient as we don't want to save in database
+
 }
