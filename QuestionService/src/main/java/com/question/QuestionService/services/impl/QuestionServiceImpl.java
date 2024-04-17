@@ -31,4 +31,10 @@ public class QuestionServiceImpl implements QuestionService {
         //return null;
         return questionRepository.findById(id).orElseThrow(()-> new RuntimeException("Question not found"));
     }
+
+    @Override
+    public List<Question> getQuestionsOfQuiz(Long quizId) {
+        //return null;
+        return questionRepository.findByQuizId(quizId);
+    }
 }
